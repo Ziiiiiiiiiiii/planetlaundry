@@ -51,7 +51,7 @@ class CustomerController extends Controller
                 'name' => $request->name,
                 'sex' => $request->sex,
                 'address' => $request->address,
-                'phone' => $request->phone,
+                'phone' => $request->phone
             ],
         );
 

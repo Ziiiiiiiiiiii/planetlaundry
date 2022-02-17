@@ -37,7 +37,7 @@ class OutletController extends Controller
             [
                 'name' => $request->name,
                 'address' => $request->address,
-                'phone' => $request->phone,
+                'phone' => $request->phone
             ],
         );
 

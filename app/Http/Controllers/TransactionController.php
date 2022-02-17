@@ -54,7 +54,7 @@ class TransactionController extends Controller
                 'total_price' => $request->total_price,
                 'status' => $request->status,
                 'paid_status' => $request->paid_status,
-                'user_id' => $request->user_id,
+                'user_id' => $request->user_id
             ],
         );
 

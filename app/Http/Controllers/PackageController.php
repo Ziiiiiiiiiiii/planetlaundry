@@ -30,7 +30,7 @@ class PackageController extends Controller
             [
                 'package_name' => $request->package_name,
                 'package_category_id' => $request->package_category_id,
-                'description' => $request->description,
+                'description' => $request->description
             ],
         );
 
