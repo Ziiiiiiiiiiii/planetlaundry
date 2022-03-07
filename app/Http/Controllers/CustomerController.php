@@ -62,6 +62,7 @@ class CustomerController extends Controller
     {
         $customer = new Customer;
         $customer->name = $request->name;
+        $customer->sex = $request->sex;
         $customer->address = $request->address;
         $customer->phone = $request->phone;
         $customer->save();
@@ -73,6 +74,7 @@ class CustomerController extends Controller
     {
         $customer = Customer::find($request->id);
         $customer->name = $request->name;
+        $customer->sex = $request->sex;
         $customer->address = $request->address;
         $customer->phone = $request->phone;
         $customer->save();
