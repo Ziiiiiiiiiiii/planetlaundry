@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container-fluid p-0">
-    <form method="post" action="{{ route('storeoutlet') }}">
+    <form method="post" action="{{ route('updateoutlet') }}">
         @csrf
         <div class="col-12 d-flex">
             <div class="card flex-fill">
