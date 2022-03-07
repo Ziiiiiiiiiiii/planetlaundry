@@ -43,17 +43,39 @@ class CustomerController extends Controller
         return view('admin.customer.edit', compact('customer', 'customers'));
     }
 
+    // public function store(Request $request)
+    // {
+    //     Customer::updateOrCreate(
+    //         ['id' => $request->id],
+    //         [
+    //             'name' => $request->name,
+    //             'sex' => $request->sex,
+    //             'address' => $request->address,
+    //             'phone' => $request->phone
+    //         ],
+    //     );
+
+    //     return redirect('customers');
+    // }
+
     public function store(Request $request)
     {
-        Customer::updateOrCreate(
-            ['id' => $request->id],
-            [
-                'name' => $request->name,
-                'sex' => $request->sex,
-                'address' => $request->address,
-                'phone' => $request->phone
-            ],
-        );
+        $customer = new Customer;
+        $customer->name = $request->name;
+        $customer->address = $request->address;
+        $customer->phone = $request->phone;
+        $customer->save();
+
+        return redirect('customers');
+    }
+
+    public function update(Request $request)
+    {
+        $customer = Customer::find($request->id);
+        $customer->name = $request->name;
+        $customer->address = $request->address;
+        $customer->phone = $request->phone;
+        $customer->save();
 
         return redirect('customers');
     }

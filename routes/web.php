@@ -28,6 +28,7 @@ Route::get('customers', [App\Http\Controllers\CustomerController::class, 'index'
 Route::get('customers/{id}', [App\Http\Controllers\CustomerController::class, 'customer']);
 Route::get('customers/edit/{id}', [App\Http\Controllers\CustomerController::class, 'edit']);
 Route::post('customers/store', [App\Http\Controllers\CustomerController::class, 'store'])->name('storecustomer');
+Route::post('customers/update/{id}', [App\Http\Controllers\CustomerController::class, 'update'])->name('updatecustomer');
 Route::get('customers/delete/{id}', [App\Http\Controllers\CustomerController::class, 'delete']);
 
 // Transaction
