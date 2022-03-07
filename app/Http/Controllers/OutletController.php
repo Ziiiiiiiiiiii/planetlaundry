@@ -30,41 +30,41 @@ class OutletController extends Controller
         return view('admin.outlet.edit', compact('outlet', 'outlets'));
     }
 
+    public function store(Request $request)
+    {
+        Outlet::updateOrCreate(
+            ['id' => $request->id],
+            [
+                'name' => $request->name,
+                'address' => $request->address,
+                'phone' => $request->phone
+            ],
+        );
+
+        return redirect('outlets');
+    }
+
     // public function store(Request $request)
     // {
-    //     Outlet::updateOrCreate(
-    //         ['id' => $request->id],
-    //         [
-    //             'name' => $request->name,
-    //             'address' => $request->address,
-    //             'phone' => $request->phone
-    //         ],
-    //     );
+    //     $outlet = new Outlet;
+    //     $outlet->name = $request->name;
+    //     $outlet->address = $request->address;
+    //     $outlet->phone = $request->phone;
+    //     $outlet->save();
 
     //     return redirect('outlets');
     // }
 
-    public function store(Request $request)
-    {
-        $outlet = new Outlet;
-        $outlet->name = $request->name;
-        $outlet->address = $request->address;
-        $outlet->phone = $request->phone;
-        $outlet->save();
+    // public function update(Request $request)
+    // {
+    //     $outlet = Outlet::find($request->id);
+    //     $outlet->name = $request->name;
+    //     $outlet->address = $request->address;
+    //     $outlet->phone = $request->phone;
+    //     $outlet->save();
 
-        return redirect('outlets');
-    }
-
-    public function update(Request $request)
-    {
-        $outlet = Outlet::find($request->id);
-        $outlet->name = $request->name;
-        $outlet->address = $request->address;
-        $outlet->phone = $request->phone;
-        $outlet->save();
-
-        return redirect('outlets');
-    }
+    //     return redirect('outlets');
+    // }
 
     public function delete($id)
     {
