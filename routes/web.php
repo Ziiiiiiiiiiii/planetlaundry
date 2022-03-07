@@ -38,8 +38,8 @@ Route::post('transaction/store', [App\Http\Controllers\TransactionController::cl
 // Outlet
 Route::get('outlets', [App\Http\Controllers\OutletController::class, 'index'])->name('outlets');
 Route::get('outlets/edit/{id}', [App\Http\Controllers\OutletController::class, 'edit']);
-Route::post('outlet/store', [App\Http\Controllers\OutletController::class, 'store'])->name('storeoutlet');
-Route::post('outlet/update/{id}', [App\Http\Controllers\OutletController::class, 'update'])->name('updateoutlet');
+Route::post('outlets/store', [App\Http\Controllers\OutletController::class, 'store'])->name('storeoutlet');
+Route::post('outlets/update/{id}', [App\Http\Controllers\OutletController::class, 'update'])->name('updateoutlet');
 Route::get('outlets/{id}', [App\Http\Controllers\OutletController::class, 'outlet']);
 Route::get('outlets/delete/{id}', [App\Http\Controllers\OutletController::class, 'delete']);
 
