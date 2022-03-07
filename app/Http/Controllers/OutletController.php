@@ -55,6 +55,17 @@ class OutletController extends Controller
         return redirect('outlets');
     }
 
+    public function update(Request $request, $id)
+    {
+        $outlet = Outlet::find($id);
+        $outlet->name = $request->name;
+        $outlet->address = $request->address;
+        $outlet->phone = $request->phone;
+        $outlet->save();
+
+        return redirect('outlets');
+    }
+
     public function delete($id)
     {
         $outlet = Outlet::find($id);
